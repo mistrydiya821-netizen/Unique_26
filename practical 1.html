@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <label for="username">Username:</label><br>
+        <input type="text" id="username" name="username"><br>
+
+        <label for="password">Password:</label><br>
+        <input type="password" id="password" name="password"><br>
+    
+        <label for="email">email:</label><br>
+        <input type="email" id="email" name="email"><br>
+    
+        <label for="number"> phone number:</label><br>
+        <input type="tel" id="number" name="number"><br><br>
+        <button type="submit" onclick="validateForm()">Submit</button>
+    </form>
+   
+   <script>
+        function validateForm() {
+            const usernameInput = document.getElementById('username').value;
+            const passwordInput = document.getElementById('password').value;
+            const emailInput = document.getElementById('email').value;
+            const numberInput = document.getElementById('number').value;
+
+            if (usernameInput === '') {
+                alert('Please enter a username.');
+                return false;
+            }
+
+            if (passwordInput === '') {
+                alert('Please enter a password.');
+                return false;
+            }
+
+            if (emailInput === '') {
+                alert('Please enter an email address.');
+                return false;
+            }
+
+            if (numberInput === '' || isNaN(numberInput) || numberInput.length !== 10) {
+                alert('Please enter a valid phone number.');
+                return false;
+            }
+        }
+    </script>
+</body>
+</html>
